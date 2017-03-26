@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SBS.Data.Entities
 {
-    public class Accessory : VersionedEntity
+    public class Accessory
     {
         public Accessory(string name,
                          int width,

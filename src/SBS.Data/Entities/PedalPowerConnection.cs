@@ -1,6 +1,6 @@
 ﻿namespace SBS.Data.Entities
 {
-    public class PowerConnection : VersionedEntity
+    public class PedalPowerConnection
     {
         public virtual int PowerConnectionID { get; set; }
         public virtual int Voltage { get; set; }

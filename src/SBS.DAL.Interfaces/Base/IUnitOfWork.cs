@@ -1,4 +1,5 @@
-﻿using SBS.Data.Entities;
+﻿using SBS.DAL.Interfaces;
+using SBS.Data.Entities;
 
 namespace SBS.DAL.Interfaces.Base
 {
@@ -6,8 +7,9 @@ namespace SBS.DAL.Interfaces.Base
     {
         IReadWriteRepository<Accessory> AccessoryRepository { get; }
         IReadWriteRepository<Board> BoardRepository { get; }
+        ISingleReadWriteRepository<BoardDeployment> BoardDeploymentRepository { get; }
+        IBoardDeploymentItemRepository BoardDeploymentItemRepository { get; }
         IReadWriteRepository<Pedal> PedalRepository { get; }
-        IReadOnlyRepository<PedalTypeFamily> PedalTypeFamilyRepository { get; }
         IReadOnlyRepository<PedalType> PedalTypeRepository { get; }
 
         void SaveChanges();

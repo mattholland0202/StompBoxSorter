@@ -11,6 +11,5 @@ namespace SBS.BLL.Interfaces.Base
         IBoardBll Boards { get; }
         IPedalBll Pedals { get; }
         IGetEntityBLLBase<PedalType> PedalTypes { get; }
-        IGetEntityBLLBase<PedalTypeFamily> PedalTypeFamilies { get; }
     }
 }

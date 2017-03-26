@@ -2,7 +2,7 @@
 
 namespace SBS.Data.Entities
 {
-    public class PedalDeployment : VersionedEntity
+    public class PedalDeployment
     {
         public virtual int PedalDeploymentID { get; set; }
         public virtual BoardDeploymentItem BoardDeploymentItem { get; set; }

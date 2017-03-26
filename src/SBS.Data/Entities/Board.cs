@@ -2,7 +2,7 @@
 
 namespace SBS.Data.Entities
 {
-    public class Board : VersionedEntity
+    public class Board
     {
         public Board(string name,
                      string shortName,

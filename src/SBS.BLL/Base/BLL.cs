@@ -14,7 +14,6 @@ namespace SBS.BLL.Base
         private IBoardBll boards;
         private IPedalBll pedals;
         private IGetEntityBLLBase<PedalType> pedalTypes;
-        private IGetEntityBLLBase<PedalTypeFamily> pedalTypeFamilies;
 
         public BLL()
         {
@@ -36,7 +35,6 @@ namespace SBS.BLL.Base
             boards            = new BoardBll(this);
             pedals            = new PedalBll(this);
             pedalTypes        = new PedalTypeBll(this);
-            pedalTypeFamilies = new PedalTypeFamilyBll(this);
         }
 
         public IUnitOfWork UnitOfWork => unitOfWork;
@@ -45,6 +43,5 @@ namespace SBS.BLL.Base
         public IBoardBll Boards => boards;
         public IPedalBll Pedals => pedals;
         public IGetEntityBLLBase<PedalType> PedalTypes => pedalTypes;
-        public IGetEntityBLLBase<PedalTypeFamily> PedalTypeFamilies => pedalTypeFamilies;
     }
 }

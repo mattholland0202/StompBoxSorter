@@ -2,7 +2,7 @@
 
 namespace SBS.Data.Entities
 {
-    public class PowerSupply : VersionedEntity
+    public class PowerSupply
     {
         public virtual int PowerSupplyID { get; set; }
         public virtual string Name { get; set; }
@@ -12,8 +12,8 @@ namespace SBS.Data.Entities
         public virtual int Height { get; set; }
         public virtual int Depth { get; set; }
 
-        private readonly IList<PowerConnection> powerConnections = new List<PowerConnection>();
-        public virtual IList<PowerConnection> PowerConnections
+        private readonly IList<PedalPowerConnection> powerConnections = new List<PedalPowerConnection>();
+        public virtual IList<PedalPowerConnection> PowerConnections
         {
             get
             {

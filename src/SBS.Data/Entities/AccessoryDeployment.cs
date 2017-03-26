@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace SBS.Data.Entities
+﻿namespace SBS.Data.Entities
 {
-    public class AccessoryDeployment : VersionedEntity
+    public class AccessoryDeployment
     {
+        public AccessoryDeployment(BoardDeploymentItem boardDeploymentItem,
+                                   Accessory accessory)
+        {
+            BoardDeploymentItem = boardDeploymentItem;
+            Accessory           = accessory;
+        }
+
         public virtual int AccessoryDeploymentID { get; set; }
         public virtual BoardDeploymentItem BoardDeploymentItem { get; set; }
         public virtual Accessory Accessory { get; set; }

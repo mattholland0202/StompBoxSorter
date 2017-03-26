@@ -2,8 +2,15 @@
 
 namespace SBS.Data.Entities
 {
-    public class BoardDeployment : VersionedEntity
+    public class BoardDeployment
     {
+        public BoardDeployment(string name,
+                               Board board)
+        {
+            Name  = name;
+            Board = board;
+        }
+
         public virtual int BoardDeploymentID { get; set; }
         public virtual string Name { get; set; }
         public virtual Board Board { get; set; }

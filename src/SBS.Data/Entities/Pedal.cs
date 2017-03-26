@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SBS.Data.Entities
 {
-    public class Pedal : VersionedEntity
+    public class Pedal
     {
         public Pedal(string name,
                      string shortName,
@@ -12,11 +12,12 @@ namespace SBS.Data.Entities
                      int width,
                      int height,
                      int depth,
-                     PowerConnection powerConnection,
-                     int currentDraw,
+                     bool trueBypass,
+                     PedalPowerConnection powerConnection,
                      IList<PedalType> types,
                      IList<PedalJack> jacks,
                      IList<PedalImage> images,
+                     int? currentDraw = null,
                      string alternativeName = null,
                      int? weight = null)
         {
@@ -28,6 +29,7 @@ namespace SBS.Data.Entities
             Width                = width;
             Height               = height;
             Depth                = depth;
+            TrueBypass           = trueBypass;
             PowerConnection      = powerConnection;
             CurrentDraw          = currentDraw;
             Weight               = weight;
@@ -48,9 +50,10 @@ namespace SBS.Data.Entities
         public virtual int Width { get; set; }
         public virtual int Height { get; set; }
         public virtual int Depth { get; set; }
+        public virtual bool TrueBypass { get; set; }
         public virtual int? Weight { get; set; }
-        public virtual PowerConnection PowerConnection { get; set; }
-        public virtual int CurrentDraw { get; set; }
+        public virtual PedalPowerConnection PowerConnection { get; set; }
+        public virtual int? CurrentDraw { get; set; }
         public virtual DateTime DateCreated { get; set; }
         public virtual bool IsVerified { get; set; }
 

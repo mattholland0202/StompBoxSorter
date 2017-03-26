@@ -1,4 +1,5 @@
-﻿using SBS.DAL.Interfaces.Base;
+﻿using SBS.DAL.Interfaces;
+using SBS.DAL.Interfaces.Base;
 using SBS.Data.Entities;
 
 namespace SBS.DAL.Base
@@ -7,19 +8,23 @@ namespace SBS.DAL.Base
     {
         private IReadWriteRepository<Accessory> accessoryRepository;
         private IReadWriteRepository<Board> boardRepository;
+        private ISingleReadWriteRepository<BoardDeployment> boardDeploymentRepository;
+        private IBoardDeploymentItemRepository boardDeploymentItemRepository;
         private IReadWriteRepository<Pedal> pedalRepository;
-        private IReadOnlyRepository<PedalTypeFamily> pedalTypeFamilyRepository;
         private IReadOnlyRepository<PedalType> pedalTypeRepository;
 
         public UnitOfWork()
         {
+            SbsContext dbc = new SbsContext();
 
+            pedalTypeRepository = new PedalTypeRepository(dbc);
         }
 
         public IReadWriteRepository<Accessory> AccessoryRepository => accessoryRepository;
         public IReadWriteRepository<Board> BoardRepository => boardRepository;
+        public ISingleReadWriteRepository<BoardDeployment> BoardDeploymentRepository => boardDeploymentRepository;
+        public IBoardDeploymentItemRepository BoardDeploymentItemRepository => boardDeploymentItemRepository;
         public IReadWriteRepository<Pedal> PedalRepository => pedalRepository;
-        public IReadOnlyRepository<PedalTypeFamily> PedalTypeFamilyRepository => pedalTypeFamilyRepository;
         public IReadOnlyRepository<PedalType> PedalTypeRepository => pedalTypeRepository;
 
         public void SaveChanges()

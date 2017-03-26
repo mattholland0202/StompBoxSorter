@@ -1,6 +1,6 @@
 ﻿namespace SBS.Data.Entities
 {
-    public class PedalImage : VersionedEntity
+    public class PedalImage
     {
         public virtual int PedalImageID { get; set; }
         public virtual Pedal Pedal { get; set; }

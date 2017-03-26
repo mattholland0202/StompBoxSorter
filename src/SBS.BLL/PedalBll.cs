@@ -24,6 +24,7 @@ namespace SBS.BLL
         /// <param name="width">The width of the Pedal, im millimeteres</param>
         /// <param name="height">The height of the Pedal, in millimetres</param>
         /// <param name="depth">The depth of the Pedal, in millimetres</param>
+        /// <param name="trueBypass">Is the Pedal True Bypass</param>
         /// <param name="powerConnection">The Power Connection for the Pedal</param>
         /// <param name="currentDraw">The current draw of the Pedal, in miliamps</param>
         /// <param name="types">A collection of the Types of the Pedal</param>
@@ -40,11 +41,12 @@ namespace SBS.BLL
                         int width,
                         int height,
                         int depth,
-                        PowerConnection powerConnection,
-                        int currentDraw,
+                        bool trueBypass,
+                        PedalPowerConnection powerConnection,
                         IList<PedalType> types,
                         IList<PedalJack> jacks,
                         IList<PedalImage> images,
+                        int? currentDraw = null,
                         string alternativeName = null,
                         int? weight = null)
         {
@@ -102,11 +104,12 @@ namespace SBS.BLL
                                     width,
                                     height,
                                     depth,
+                                    trueBypass,
                                     powerConnection,
-                                    currentDraw,
                                     types,
                                     jacks,
                                     images,
+                                    currentDraw,
                                     alternativeName,
                                     weight);
 
@@ -145,6 +148,16 @@ namespace SBS.BLL
         public IEnumerable<Pedal> GetAll()
         {
             var pedals = UnitOfWork.PedalRepository.GetAll();
+            return pedals;
+        }
+
+        /// <summary>
+        /// Get all Pedals which have been marked as Verified
+        /// </summary>
+        /// <returns>All Pedals which have been marked as Verified</returns>
+        public IEnumerable<Pedal> GetAllVerified()
+        {
+            var pedals = UnitOfWork.PedalRepository.GetAll().Where(p => p.IsVerified);
             return pedals;
         }
 

@@ -2,7 +2,7 @@
 
 namespace SBS.Data.Entities
 {
-    public class Manufacturer : VersionedEntity
+    public class Manufacturer
     {
         public Manufacturer(string name,
                             string shortName)
