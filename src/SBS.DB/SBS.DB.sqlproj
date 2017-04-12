@@ -64,6 +64,10 @@
     <Build Include="Tables\Pedal.sql" />
     <Build Include="Tables\PedalType.sql" />
     <Build Include="Tables\Manufacturer.sql" />
+    <Build Include="Tables\PedalJackType.sql" />
+    <Build Include="Tables\PedalJack.sql" />
+    <Build Include="Tables\Board.sql" />
+    <Build Include="Tables\Accessory.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="PostDeploymentScript.sql" />

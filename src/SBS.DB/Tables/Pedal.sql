@@ -6,6 +6,7 @@
 	[ShortName] VARCHAR(25) NOT NULL,
 	[AlternateName] VARCHAR(250),
 	[HasBatteryConnection] BIT NOT NULL,
+	[TrueBypass] BIT NOT NULL,
 	[Width] INT NOT NULL,
 	[Height] INT NOT NULL,
 	[Depth] INT NOT NULL,
