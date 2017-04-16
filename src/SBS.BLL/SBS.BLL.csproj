@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SBS.BLL.Interfaces\SBS.BLL.Interfaces.csproj" />
+    <ProjectReference Include="..\SBS.DAL.Interfaces\SBS.DAL.Interfaces.csproj" />
+    <ProjectReference Include="..\SBS.DAL\SBS.DAL.csproj" />
+    <ProjectReference Include="..\SBS.Data\SBS.Data.csproj" />
+  </ItemGroup>
+
+</Project>

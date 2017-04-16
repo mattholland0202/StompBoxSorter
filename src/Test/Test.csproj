@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <AssemblyName>Test</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>Test</PackageId>
+    <RuntimeFrameworkVersion>1.0.4</RuntimeFrameworkVersion>
+    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SBS.BLL.Interfaces\SBS.BLL.Interfaces.csproj" />
+    <ProjectReference Include="..\SBS.BLL\SBS.BLL.csproj" />
+    <ProjectReference Include="..\SBS.DAL.Interfaces\SBS.DAL.Interfaces.csproj" />
+    <ProjectReference Include="..\SBS.DAL\SBS.DAL.csproj" />
+    <ProjectReference Include="..\SBS.Data\SBS.Data.csproj" />
+  </ItemGroup>
+
+</Project>
