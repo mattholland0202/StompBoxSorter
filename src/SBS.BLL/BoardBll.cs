@@ -20,6 +20,7 @@ namespace SBS.BLL
                         Manufacturer manufacturer, 
                         int width, 
                         int height, 
+                        User creator,
                         int? weight = null)
         {
             if (String.IsNullOrWhiteSpace(name))
@@ -42,6 +43,7 @@ namespace SBS.BLL
                                     manufacturer,
                                     width,
                                     height,
+                                    creator,
                                     weight);
 
             UnitOfWork.BoardRepository.Add(board);

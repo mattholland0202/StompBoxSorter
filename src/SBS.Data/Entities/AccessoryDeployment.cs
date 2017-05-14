@@ -1,16 +1,19 @@
-﻿namespace SBS.Data.Entities
+﻿using SBS.Data.Base;
+
+namespace SBS.Data.Entities
 {
-    public class AccessoryDeployment
+    public class AccessoryDeployment : BoardDeploymentItem
     {
-        public AccessoryDeployment(BoardDeploymentItem boardDeploymentItem,
-                                   Accessory accessory)
+        public AccessoryDeployment(BoardDeployment boardDeployment,
+                                   int positionX,
+                                   int positionY,
+                                   bool belowBoard,
+                                   Accessory accessory) : base(boardDeployment, positionX, positionY, belowBoard)
         {
-            BoardDeploymentItem = boardDeploymentItem;
-            Accessory           = accessory;
+            Accessory = accessory;
         }
 
         public virtual int AccessoryDeploymentID { get; set; }
-        public virtual BoardDeploymentItem BoardDeploymentItem { get; set; }
         public virtual Accessory Accessory { get; set; }
     }
 }

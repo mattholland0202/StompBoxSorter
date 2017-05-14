@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SBS.DAL", "SBS.DAL\SBS.DAL.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SBS.Data", "SBS.Data\SBS.Data.csproj", "{9512C9CD-D703-4AC7-BEAE-6E2DC6F325E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SBS.BLL.Tests", "SBS.BLL.Tests\SBS.BLL.Tests.csproj", "{30CFC9AA-93EE-430B-899D-057419AB7F37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SBS.WebAPI", "SBS.WebAPI\SBS.WebAPI.csproj", "{DE4460DA-CDC3-4770-BF5C-7DE5F4A1C349}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +57,14 @@ Global
 		{9512C9CD-D703-4AC7-BEAE-6E2DC6F325E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9512C9CD-D703-4AC7-BEAE-6E2DC6F325E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9512C9CD-D703-4AC7-BEAE-6E2DC6F325E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30CFC9AA-93EE-430B-899D-057419AB7F37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30CFC9AA-93EE-430B-899D-057419AB7F37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30CFC9AA-93EE-430B-899D-057419AB7F37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30CFC9AA-93EE-430B-899D-057419AB7F37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE4460DA-CDC3-4770-BF5C-7DE5F4A1C349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE4460DA-CDC3-4770-BF5C-7DE5F4A1C349}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE4460DA-CDC3-4770-BF5C-7DE5F4A1C349}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE4460DA-CDC3-4770-BF5C-7DE5F4A1C349}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -68,6 +68,15 @@
     <Build Include="Tables\PedalJack.sql" />
     <Build Include="Tables\Board.sql" />
     <Build Include="Tables\Accessory.sql" />
+    <Build Include="Tables\PowerSupply.sql" />
+    <Build Include="Tables\PowerSupplyOutput.sql" />
+    <Build Include="Tables\PedalPowerConnection.sql" />
+    <Build Include="Tables\Users.sql" />
+    <Build Include="Tables\PedalImage.sql" />
+    <Build Include="Tables\BoardDeployment.sql" />
+    <Build Include="Tables\AccessoryDeployment.sql" />
+    <Build Include="Tables\PedalDeployment.sql" />
+    <Build Include="Tables\PedalDeploymentJack.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="PostDeploymentScript.sql" />

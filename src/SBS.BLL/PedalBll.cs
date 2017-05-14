@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Reflection;
 using SBS.BLL.Base;
 using SBS.BLL.Interfaces;
 using SBS.BLL.Interfaces.Base;
@@ -30,14 +32,15 @@ namespace SBS.BLL
         /// <param name="types">A collection of the Types of the Pedal</param>
         /// <param name="jacks">A collection of the Jacks the Pedal has</param>
         /// <param name="images">A collection of Images of the Pedal</param>
+        /// <param name="creator">The User who created this Pedal</param>
         /// <param name="alternativeName">An optional Alternative Name for the Pedal</param>
         /// <param name="weight">An optional value for the Weight of the Pedal</param>
         /// <exception cref="ArgumentNullException">A required parameter was not supplied</exception>
         /// <exception cref="ArgumentException">A parameter was invalid</exception>
+        
         public void Add(string name,
                         string shortName,
                         Manufacturer manufacturer,
-                        bool hasBatteryConnection,
                         int width,
                         int height,
                         int depth,
@@ -46,61 +49,22 @@ namespace SBS.BLL
                         IList<PedalType> types,
                         IList<PedalJack> jacks,
                         IList<PedalImage> images,
-                        int? currentDraw = null,
+                        User creator,
                         string alternativeName = null,
                         int? weight = null)
         {
-            if (String.IsNullOrWhiteSpace(name))
-            {
-                throw new ArgumentNullException(nameof(name));
-            }
-
-            if (String.IsNullOrWhiteSpace(shortName))
-            {
-                throw new ArgumentNullException(nameof(shortName));
-            }
-
-            if (manufacturer == null)
-            {
-                throw new ArgumentNullException(nameof(manufacturer));
-            }
-
-            if (powerConnection == null)
-            {
-                throw new ArgumentNullException(nameof(powerConnection));
-            }
-
-            if (types == null)
-            {
-                throw new ArgumentNullException(nameof(types));
-            }
-            else if (types.Count() == 0)
-            {
-                throw new ArgumentException("At least one Pedal Type must be supplied", nameof(types));
-            }
-
-            if (jacks == null)
-            {
-                throw new ArgumentNullException(nameof(jacks));
-            }
-            else if (jacks.Count() == 0)
-            {
-                throw new ArgumentException("At least one Pedal Jack must be specified", nameof(jacks));
-            }
-
-            if (images == null)
-            {
-                throw new ArgumentNullException(nameof(images));
-            }
-            else if (images.Count() == 0)
-            {
-                throw new ArgumentException("At least one Image must be specified", nameof(images));
-            }
+            base.CheckParameterForNull(name, nameof(name));
+            base.CheckParameterForNull(shortName, nameof(shortName));
+            base.CheckParameterForNull(manufacturer, nameof(manufacturer));
+            base.CheckParameterForNull(powerConnection, nameof(powerConnection));
+            base.CheckParameterForNull(types, nameof(types));
+            base.CheckParameterForNull(jacks, nameof(jacks));
+            base.CheckParameterForNull(images, nameof(images));
+            base.CheckParameterForNull(creator, nameof(creator));
 
             Pedal pedal = new Pedal(name,
                                     shortName,
                                     manufacturer,
-                                    hasBatteryConnection,
                                     width,
                                     height,
                                     depth,
@@ -109,7 +73,7 @@ namespace SBS.BLL
                                     types,
                                     jacks,
                                     images,
-                                    currentDraw,
+                                    creator,
                                     alternativeName,
                                     weight);
 

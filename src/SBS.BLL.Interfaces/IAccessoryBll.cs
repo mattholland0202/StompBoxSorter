@@ -9,6 +9,7 @@ namespace SBS.BLL.Interfaces
                  int width,
                  int depth,
                  int height,
+                 User creator,
                  int? weight = null);
         void Verify(Accessory accessory);
     }

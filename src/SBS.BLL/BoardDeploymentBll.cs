@@ -2,6 +2,7 @@
 using SBS.BLL.Base;
 using SBS.BLL.Interfaces;
 using SBS.BLL.Interfaces.Base;
+using SBS.Data.Base;
 using SBS.Data.Entities;
 
 namespace SBS.BLL
@@ -13,10 +14,14 @@ namespace SBS.BLL
         }
 
         public void Add(string name, 
-                        Board board)
+                        Board board,
+                        User author,
+                        string description)
         {
             BoardDeployment boardDeployment = new BoardDeployment(name,
-                                                                  board);
+                                                                  board,
+                                                                  author,
+                                                                  description);
 
             UnitOfWork.BoardDeploymentRepository.Add(boardDeployment);
         }
@@ -24,51 +29,55 @@ namespace SBS.BLL
         public void AddAccessoryDeployment(BoardDeployment boardDeployment, 
                                            Accessory accessory, 
                                            int positionX, 
-                                           int positionY)
+                                           int positionY,
+                                           bool belowBoard = false)
         {
-            BoardDeploymentItem item = new BoardDeploymentItem(boardDeployment,
-                                                               positionX,
-                                                               positionY);
-
-            AccessoryDeployment accessoryDeployment = new AccessoryDeployment(item,
+            AccessoryDeployment accessoryDeployment = new AccessoryDeployment(boardDeployment,
+                                                                              positionX,
+                                                                              positionY,
+                                                                              belowBoard,
                                                                               accessory);
+            UnitOfWork.AccessoryDeploymentRepository.Add(accessoryDeployment);
         }
 
         public void AddPedalDeployment(BoardDeployment boardDeployment, 
                                        Pedal pedal, 
                                        int positionX, 
-                                       int positionY)
+                                       int positionY,
+                                       bool belowBoard = false)
         {
-            BoardDeploymentItem item = new BoardDeploymentItem(boardDeployment,
-                                                               positionX,
-                                                               positionY);
-
-            throw new NotImplementedException();
-        }
-
-        public void AddPedalDeploymentConnection(PedalDeploymentJack source, 
-                                                 PedalDeploymentJack destination)
-        {
-            // TODO: Change this. Connection as own entity?
-            source.ConnectedTo = destination;
-            destination.ConnectedTo = source;
+            PedalDeployment pedalDeployment = new PedalDeployment(boardDeployment,
+                                                                  positionX,
+                                                                  positionY,
+                                                                  belowBoard,
+                                                                  pedal);
+            UnitOfWork.PedalDeploymentRepository.Add(pedalDeployment);
         }
 
         public void AddPowerSupplyDeployment(BoardDeployment boardDeployment, 
                                              PowerSupply powerSupply, 
                                              int positionX, 
-                                             int positionY)
+                                             int positionY,
+                                             bool belowBoard = false)
         {
-            BoardDeploymentItem item = new BoardDeploymentItem(boardDeployment,
-                                                               positionX,
-                                                               positionY);
+            PowerSupplyDeployment powerSupplyDeployment = new PowerSupplyDeployment(boardDeployment,
+                                                                                    positionX,
+                                                                                    positionY,
+                                                                                    belowBoard,
+                                                                                    powerSupply);
+            UnitOfWork.PowerSupplyDeploymentRepository.Add(powerSupplyDeployment);
+        }
 
+        public void AddPedalDeploymentConnection(PedalDeploymentJack source, 
+                                                 PedalDeploymentJack destination)
+        {
+            // TODO
             throw new NotImplementedException();
         }
 
         public void DeleteItem(BoardDeploymentItem boardDeploymentItem)
         {
-            UnitOfWork.BoardDeploymentItemRepository.Delete(boardDeploymentItem);
+            throw new NotImplementedException();
         }
 
         public void Delete(BoardDeployment entity)

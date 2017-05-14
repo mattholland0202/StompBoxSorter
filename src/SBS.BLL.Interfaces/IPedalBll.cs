@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using SBS.BLL.Interfaces.Base;
 using SBS.Data.Entities;
 
@@ -12,16 +13,15 @@ namespace SBS.BLL.Interfaces
         /// <param name="name">The Name of the Pedal</param>
         /// <param name="shortName">The Short Name of the Pedal</param>
         /// <param name="manufacturer">The Manufacturer of the Pedal</param>
-        /// <param name="hasBatteryConnection">Whether the Pedal has a battery connection</param>
         /// <param name="width">The width of the Pedal, im millimeteres</param>
         /// <param name="height">The height of the Pedal, in millimetres</param>
         /// <param name="depth">The depth of the Pedal, in millimetres</param>
         /// <param name="trueBypass">Is the Pedal True Bypass</param>
         /// <param name="powerConnection">The Power Connection for the Pedal</param>
-        /// <param name="currentDraw">The current draw of the Pedal, in miliamps</param>
         /// <param name="types">A collection of the Types of the Pedal</param>
         /// <param name="jacks">A collection of the Jacks the Pedal has</param>
         /// <param name="images">A collection of Images of the Pedal</param>
+        /// <param name="creator">The User who created this Pedal</param>
         /// <param name="alternativeName">An optional Alternative Name for the Pedal</param>
         /// <param name="weight">An optional value for the Weight of the Pedal</param>
         /// <exception cref="ArgumentNullException">A required parameter was not supplied</exception>
@@ -29,7 +29,6 @@ namespace SBS.BLL.Interfaces
         void Add(string name,
                  string shortName,
                  Manufacturer manufacturer,
-                 bool hasBatteryConnection,
                  int width,
                  int height,
                  int depth,
@@ -38,7 +37,7 @@ namespace SBS.BLL.Interfaces
                  IList<PedalType> types,
                  IList<PedalJack> jacks,
                  IList<PedalImage> images,
-                 int? currentDraw = null,
+                 User creator,
                  string alternativeName = null,
                  int? weight = null);
 

@@ -10,6 +10,7 @@ namespace SBS.BLL.Interfaces
                  Manufacturer manufacturer,
                  int width,
                  int height,
+                 User creator,
                  int? weight = null);
 
         void Verify(Board board);

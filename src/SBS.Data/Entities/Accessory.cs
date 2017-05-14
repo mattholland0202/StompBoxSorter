@@ -8,6 +8,7 @@ namespace SBS.Data.Entities
                          int width,
                          int height,
                          int depth,
+                         User creator,
                          int? weight = null)
         {
             Name        = name;
@@ -16,6 +17,7 @@ namespace SBS.Data.Entities
             Depth       = depth;
             Weight      = weight;
             DateCreated = DateTime.UtcNow;
+            Creator     = creator;
             IsVerified  = false;
         }
 
@@ -26,6 +28,7 @@ namespace SBS.Data.Entities
         public virtual int Depth { get; set; }
         public virtual int? Weight { get; set; }
         public virtual DateTime DateCreated { get; set; }
+        public virtual User Creator { get; set; }
         public virtual bool IsVerified { get; set; }
     }
 }

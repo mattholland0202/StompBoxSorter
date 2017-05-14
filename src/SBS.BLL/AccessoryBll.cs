@@ -17,6 +17,7 @@ namespace SBS.BLL
                         int width,
                         int depth,
                         int height,
+                        User creator,
                         int? weight = null)
         {
             if (String.IsNullOrWhiteSpace(name))
@@ -28,6 +29,7 @@ namespace SBS.BLL
                                                width,
                                                height,
                                                depth,
+                                               creator,
                                                weight);
 
             UnitOfWork.AccessoryRepository.Add(accesory);
